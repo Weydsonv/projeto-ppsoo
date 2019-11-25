@@ -5,8 +5,6 @@
  */
 package model;
 
-import model.RecheioDecorator;
-import model.Bolo;
 import java.util.ArrayList;
 
 /**
@@ -23,11 +21,11 @@ public class RecheioDeLimao extends RecheioDecorator {
     public RecheioDeLimao(Bolo bolo) {
         this.bolo = bolo;
         infoBolo(bolo.getPeso(), bolo.getTipo(), bolo.getIngredientes(), bolo.getValidade(), bolo.isRecheio(), bolo.getReceita());
-        ingredientesRecheio.add(new Ingrediente("Suco de limao", 0.5 * peso, "xícara(s)"));
-        ingredientesRecheio.add(new Ingrediente("Lata de leite condensado", 1 * peso, "unidade(s)"));
-        ingredientesRecheio.add(new Ingrediente("Lata de creme leite", 0.5 * peso, "unidade(s)"));
-        ingredientesRecheio.add(new Ingrediente("Clara(s) em neve", 2* peso, "unidade(s)"));
-        ingredientesRecheio.add(new Ingrediente("Gelatina incolor", 1 * peso, "colher(es) (sopa)"));
+        ingredientesRecheio.add(new Ingrediente("Suco de limao", 0.5 * this.getPeso(), Medidas.XICARAS.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Lata de leite condensado", 1 * this.getPeso(), Medidas.UNIDADES.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Lata de creme leite", 0.5 * this.getPeso(), Medidas.UNIDADES.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Clara(s) em neve", 2 * this.getPeso(), Medidas.UNIDADES.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Gelatina incolor", 1 * this.getPeso(), Medidas.COLHERES_SOPA.getMedida()));
 
         preparoRecheio.add("A gelatina deverá ser dissolvida em 3 colheres (de sopa) de água.");
         preparoRecheio.add("Misture o leite condensado com o creme de leite e o suco de limão.");

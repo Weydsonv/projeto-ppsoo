@@ -5,7 +5,6 @@
  */
 package model;
 
-import model.Ingrediente;
 import java.util.ArrayList;
 
 /**
@@ -14,21 +13,20 @@ import java.util.ArrayList;
  */
 public abstract class Bolo {
 
-
     private double peso;
     private String tipo;
     private ArrayList<Ingrediente> ingredientes;
     private int validade;
     private boolean recheio = false;
     private ArrayList<String> receita = new ArrayList<String>();
-    
+
     public void infoBolo(double peso, String tipo, ArrayList<Ingrediente> ingredientes, int validade, boolean recheio, ArrayList<String> receita) {
         this.peso = peso;
         this.tipo = tipo;
         this.ingredientes = ingredientes;
         this.validade = validade;
         this.setRecheio(recheio);
-        this.receita=receita;
+        this.receita = receita;
     }
 
     //Método template
@@ -37,8 +35,8 @@ public abstract class Bolo {
         prepararMassa();
         if (this.isRecheio()) {
             rechear();
-       }
-       return this.receita;
+        }
+        return this.receita;
     }
 
     public void reunirIngredientes() {

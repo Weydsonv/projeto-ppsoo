@@ -24,7 +24,7 @@ public class BoloDeTrigo extends Bolo {
         ArrayList<String> receita = this.getReceita();
         receita.add("Modo de Preparo:");
         receita.add("Junte a manteiga, o açúcar e os ovos em uma tigela.");
-        receita.add("Em seguida misture tudo co ajuda de um batedor de arame (fouet).");
+        receita.add("Em seguida misture tudo com a ajuda de um batedor de arame (fouet).");
         receita.add("Adicione o leite e misture mais um pouco.");
         receita.add("Depois adicione toda a farinha de trigo e continue misturando até formar uma massa bem homogênea.");
         receita.add("Despeje a mistura numa forma untada e enfarinhada.");

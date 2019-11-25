@@ -5,9 +5,6 @@
  */
 package model;
 
-import model.RecheioDecorator;
-import model.Ingrediente;
-import model.Bolo;
 import java.util.ArrayList;
 
 /**
@@ -25,11 +22,11 @@ public class RecheioDeChocolate extends RecheioDecorator {
         this.bolo = bolo;
         infoBolo(bolo.getPeso(), bolo.getTipo(), bolo.getIngredientes(), bolo.getValidade(), bolo.isRecheio(), bolo.getReceita());
 
-        ingredientesRecheio.add(new Ingrediente("Amido de milho", 4*peso, "colher(es) (sopa)"));
-        ingredientesRecheio.add(new Ingrediente("Chocolate em pó", 6*peso, "colher(es) (sopa)"));
-        ingredientesRecheio.add(new Ingrediente("Gema", 1*peso, "unidade(s)"));
-        ingredientesRecheio.add(new Ingrediente("Lata de leite condensado", 1*peso, "unidade(s)"));
-        ingredientesRecheio.add(new Ingrediente("Lata de creme leite", 1*peso, "unidade(s)"));
+        ingredientesRecheio.add(new Ingrediente("Amido de milho", 4 * this.getPeso(), Medidas.COLHERES_SOPA.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Chocolate em pó", 6 * this.getPeso(), Medidas.COLHERES_SOPA.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Gema", 1 * this.getPeso(), Medidas.UNIDADES.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Lata de leite condensado", 1 * this.getPeso(), Medidas.UNIDADES.getMedida()));
+        ingredientesRecheio.add(new Ingrediente("Lata de creme leite", 1 * this.getPeso(), Medidas.UNIDADES.getMedida()));
 
         preparoRecheio.add("Em uma panela coloque todos os ingredientes menos o creme de leite. Leve para o fogo médio, mexa até engrossar");
         preparoRecheio.add("Retire do fogo, deixe esfriar");
@@ -50,7 +47,6 @@ public class RecheioDeChocolate extends RecheioDecorator {
             receita.add(ingrediente.getQuantidade() + " " + ingrediente.getUnidadeDeMedida() + " " + ingrediente.getNome());
         });
 
-        
         receita.add("Modo de Preparo:");
         preparoRecheio.forEach((preparo) -> {
             receita.add(preparo);

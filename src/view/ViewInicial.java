@@ -7,9 +7,6 @@ package view;
 
 import control.ControlCursoDeBolos;
 import java.util.ArrayList;
-import model.CursoDeBolos;
-import model.CursoDeBolosTradicionais;
-import model.TipoDeBolo;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,7 +17,7 @@ import java.util.Scanner;
 public class ViewInicial {
 
     public static void main(String[] args) {
-        
+
         boolean done = false;
         int tipoBolo = 0;
         int tipoRecheio = 0;
@@ -40,7 +37,7 @@ public class ViewInicial {
             } catch (InputMismatchException ex) {
                 System.out.println("Escolha uma das receitas disponíveis \n");
             }
-             switch (tipoBolo) {
+            switch (tipoBolo) {
                 case 1:
                     done = true;
                     break;
@@ -52,15 +49,15 @@ public class ViewInicial {
                 case 3:
                     done = true;
                     break;
-                    
+
                 default:
                     System.out.println("Escolha uma das receitas disponíveis");
                     break;
             }
 
         }
-        
-        done = false; 
+
+        done = false;
         while (!done) {
             System.out.println("Peso: ");
 
@@ -72,8 +69,8 @@ public class ViewInicial {
                 System.out.println("Peso inválido! \n");
             }
         }
-        
-        done = false; 
+
+        done = false;
         while (!done) {
             System.out.println("Recheio: ");
             System.out.println("1. Chocolate.");
@@ -86,7 +83,7 @@ public class ViewInicial {
             } catch (InputMismatchException ex) {
                 System.out.println("Recheio inválido! \n");
             }
-            
+
             switch (tipoRecheio) {
                 case 1:
                     recheio = true;
@@ -101,20 +98,20 @@ public class ViewInicial {
                 case 3:
                     recheio = false;
                     done = true;
-                    break;                    
-                
+                    break;
+
                 default:
                     System.out.println("Escolha uma das opções.");
                     break;
             }
         }
-        
+
         ControlCursoDeBolos curso = new ControlCursoDeBolos(tipoBolo, recheio, peso, tipoRecheio);
         ArrayList<String> receita = curso.getReceita();
-        
-        for(String item: receita){
+
+        for (String item : receita) {
             System.out.println(item);
         }
-        
+
     }
 }
